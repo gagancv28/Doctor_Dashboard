@@ -1,0 +1,158 @@
+import type {
+  SocratesCase,
+  LongitudinalRecord,
+  AbhaProfile,
+} from '../types/socrates';
+
+export const INITIAL_ABHA_PROFILE: AbhaProfile = {
+  abhaId: '91-4829-1049-2819',
+  abhaAddress: 'lakshmi.gowda@abdm',
+  name: 'Lakshmi Gowda',
+  age: 34,
+  gender: 'Female',
+  dob: '12 Apr 1992',
+  phone: '+91 98765 43210',
+  linkedRecordsCount: 14,
+  kycStatus: 'ABHA Verified (ABDM Sandbox)',
+  emergencyContact: '+91 98450 11223 (Spouse)',
+};
+
+export const INITIAL_SOCRATES_CASE: SocratesCase = {
+  chiefComplaint: 'Acute Right-Sided Throbbing Headache',
+  site: 'Right temporal & frontoparietal region',
+  onset: 'Yesterday evening (~16 hours ago), acute onset after office work',
+  character: 'Pulsating, throbbing, moderate-to-severe discomfort',
+  radiation: 'Radiates to right periorbital area; no radiation to neck or occiput',
+  associations: [
+    'Photophobia (Pronounced sensitivity to bright light)',
+    'Mild nausea (No active vomiting)',
+    'Visual discomfort in direct sunlight',
+  ],
+  timeCourse: 'Continuous, progressively worsening when exposed to screen or sunlight',
+  exacerbatingRelieving: 'Exacerbated by bright light & head movements; relieved by resting in a dark, quiet room',
+  severity: 7, // Doctor can edit/confirm
+  language: 'Kannada',
+  languageCode: 'kn',
+  rawTranscript: 'ನಿನ್ನೆ ಸಂಜೆ ಇಂದ ತಲೆನೋವು ಇದೆ. ಬಲಭಾಗದಲ್ಲಿ ಹೆಚ್ಚು ನೋವು ಇದೆ ಮತ್ತು ಬೆಳಕನ್ನು ನೋಡಿದಾಗ ಹೆಚ್ಚಾಗುತ್ತದೆ.',
+  translatedTranscript: 'I have had a headache since yesterday evening. The pain is mostly on the right side and becomes worse when I look at bright light.',
+  hpi: '34-year-old female presents with acute right-sided pulsating hemicrania beginning yesterday evening (~16 hours duration). Pain is markedly aggravated by bright light exposure and ambient motion, with associated photophobia and mild nausea. No neck stiffness or focal neurologic signs. Highly suggestive of acute unilateral migraine without aura.',
+  doctorVerified: false,
+  doctorNotes: 'Prescribed abortive migraine therapy. Advised hydration, darkened room rest, and avoidance of screen triggers for 24 hours.',
+};
+
+export const INITIAL_LONGITUDINAL_TIMELINE: LongitudinalRecord[] = [
+  {
+    id: 'long-rec-2026-08-12-1',
+    date: '12 Aug 2026',
+    year: 2026,
+    category: 'consultation',
+    hospitalClinic: 'Government General Hospital, Hassan',
+    doctorName: 'Dr. Sharma, MD',
+    department: 'General Medicine OPD',
+    symptomsDiagnoses: 'Tension-type Headache & Visual Fatigue',
+    prescriptions: [
+      {
+        medication: 'Tab. Paracetamol 500mg',
+        dosage: '500 mg',
+        instructions: '1 tablet TDS after meals (SOS)',
+        duration: '5 days',
+      },
+      {
+        medication: 'Cap. B-Complex with Zinc',
+        dosage: '1 capsule',
+        instructions: '1 cap OD after breakfast',
+        duration: '15 days',
+      },
+    ],
+    clinicalNotes: 'Mild bilateral band-like ache during peak work stress. Advised 20-20-20 screen rest rule and adequate oral hydration.',
+  },
+  {
+    id: 'long-rec-2026-08-04',
+    date: '04 Aug 2026',
+    year: 2026,
+    category: 'lab',
+    hospitalClinic: 'City Diagnostics Centre, Bangalore',
+    doctorName: 'Dr. R. Iyer, MD (Pathology)',
+    department: 'Hematology & Clinical Biochemistry',
+    symptomsDiagnoses: 'Routine Complete Blood Count (CBC) & ESR',
+    prescriptions: [],
+    labMetrics: [
+      { test: 'Hemoglobin (Hb)', result: '13.2 g/dL', normalRange: '12.0 - 15.5 g/dL' },
+      { test: 'Total Leukocyte Count (TLC)', result: '6,800 /µL', normalRange: '4,000 - 11,000 /µL' },
+      { test: 'Platelet Count', result: '240,000 /µL', normalRange: '150,000 - 450,000 /µL' },
+      { test: 'ESR (Westergren)', result: '12 mm/hr', normalRange: '0 - 20 mm/hr' },
+    ],
+    clinicalNotes: 'All hematological parameters within healthy physiological limits.',
+  },
+  {
+    id: 'long-rec-2026-07-22',
+    date: '22 Jul 2026',
+    year: 2026,
+    category: 'consultation',
+    hospitalClinic: 'Private Specialty Clinic, Bangalore',
+    doctorName: 'Dr. K. Mehta, MD',
+    department: 'Dermatology & Skin Care',
+    symptomsDiagnoses: 'Localized Eczematous Dermatitis (Left Forearm)',
+    prescriptions: [
+      {
+        medication: 'Tab. Levocetirizine 5mg',
+        dosage: '5 mg',
+        instructions: '1 tablet at bedtime (HS)',
+        duration: '7 days',
+      },
+      {
+        medication: 'Clobetasol Propionate 0.05% Cream',
+        dosage: 'Topical',
+        instructions: 'Apply thin film BD to affected area',
+        duration: '10 days',
+      },
+    ],
+    clinicalNotes: 'Dry erythematous patch with mild pruritus. Resolved upon follow-up.',
+  },
+  {
+    id: 'long-rec-2025-12-18',
+    date: '18 Dec 2025',
+    year: 2025,
+    category: 'discharge',
+    hospitalClinic: 'District Inpatient Hospital, Hassan',
+    doctorName: 'Dr. V. Rao, MD',
+    department: 'Internal Medicine (Inpatient Ward 3)',
+    symptomsDiagnoses: 'Acute Acid Peptic Disorder (Gastritis) & Severe Dehydration',
+    prescriptions: [
+      {
+        medication: 'Cap. Omeprazole 20mg',
+        dosage: '20 mg',
+        instructions: '1 capsule OD on empty stomach in morning',
+        duration: '14 days',
+      },
+      {
+        medication: 'Tab. Domperidone 10mg',
+        dosage: '10 mg',
+        instructions: '1 tablet BD 30 mins before food',
+        duration: '3 days',
+      },
+      {
+        medication: 'Oral Rehydration Salts (ORS)',
+        dosage: '1 sachet / 1L',
+        instructions: 'Drink throughout the day as needed',
+        duration: '2 days',
+      },
+    ],
+    clinicalNotes: '48-hour inpatient observation for epigastric burning and recurrent vomiting. Discharged hemodynamically stable.',
+  },
+  {
+    id: 'long-rec-2024-09-03',
+    date: '03 Sep 2024',
+    year: 2024,
+    category: 'lab',
+    hospitalClinic: 'State Reference Clinical Laboratory, Mysore',
+    doctorName: 'Dr. S. Ananth, MD',
+    department: 'Endocrinology Screening',
+    symptomsDiagnoses: 'Thyroid Function Evaluation (Serum TSH)',
+    prescriptions: [],
+    labMetrics: [
+      { test: 'Serum TSH (Ultrasensitive)', result: '2.34 mIU/L', normalRange: '0.45 - 4.50 mIU/L' },
+    ],
+    clinicalNotes: 'Euthyroid baseline confirmed. No endocrine pharmacotherapy indicated.',
+  },
+];
